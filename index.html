@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neha Riyazahamed Haveli — Data Analyst &amp; AI/ML</title>
+<meta name="description" content="Portfolio of Neha Riyazahamed Haveli — data analyst and AI/ML graduate student. Projects in applied AI, chatbot design, and data analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F7F6F1;
+    --paper-line: #DEDCD1;
+    --ink: #1C2B3A;
+    --ink-soft: #4B5A68;
+    --teal: #2F6B5E;
+    --amber: #B9812E;
+    --card: #FFFFFF;
+    --radius: 4px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size: 100% 32px, 32px 100%;
+    background-attachment: local;
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    padding: 96px 0 64px;
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px; height:8px;
+    background:var(--teal);
+    display:inline-block;
+    border-radius:1px;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size: clamp(38px, 6vw, 62px);
+    line-height:1.05;
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+
+  .role{
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:56ch;
+    margin:0 0 28px;
+  }
+
+  .header-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .header-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    border:1px solid var(--ink);
+    padding:8px 14px;
+    border-radius:var(--radius);
+    transition:background .15s ease, color .15s ease;
+  }
+  .header-links a:hover, .header-links a:focus-visible{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .header-links a.primary{
+    background:var(--teal);
+    border-color:var(--teal);
+    color:#fff;
+  }
+  .header-links a.primary:hover{
+    background:#254f45;
+  }
+
+  /* ---------- section labels ---------- */
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border-top:1px solid var(--paper-line);
+    padding-top:10px;
+    margin: 0 0 28px;
+  }
+
+  section.block{
+    padding: 40px 0 8px;
+  }
+
+  /* ---------- record cards ---------- */
+  .record{
+    background:var(--card);
+    border:1px solid var(--paper-line);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    margin-bottom: 24px;
+    position:relative;
+  }
+  .record::before{
+    content:attr(data-record);
+    position:absolute;
+    top:-11px;
+    left:24px;
+    background:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--ink-soft);
+    padding:0 8px;
+  }
+
+  .record-head{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    margin-bottom:6px;
+  }
+
+  .record h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:26px;
+    margin:0;
+  }
+
+  .record .status{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--teal);
+    border:1px solid var(--teal);
+    padding:4px 9px;
+    border-radius:20px;
+    white-space:nowrap;
+    margin-top:4px;
+  }
+
+  .record p.desc{
+    color:var(--ink-soft);
+    margin:10px 0 16px;
+    max-width:70ch;
+  }
+
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    background:#F0EFE7;
+    border:1px solid var(--paper-line);
+    padding:4px 10px;
+    border-radius:20px;
+    color:var(--ink);
+  }
+
+  .record-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+  }
+  .record-actions a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    color:var(--teal);
+    border-bottom:1px solid transparent;
+  }
+  .record-actions a:hover, .record-actions a:focus-visible{
+    border-bottom-color:var(--teal);
+  }
+
+  details{
+    margin-top:18px;
+    border-top:1px dashed var(--paper-line);
+    padding-top:16px;
+  }
+  summary{
+    cursor:pointer;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::before{
+    content:"+";
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:16px; height:16px;
+    border:1px solid var(--ink-soft);
+    border-radius:3px;
+    font-size:12px;
+    transition:transform .15s ease;
+  }
+  details[open] summary::before{
+    content:"–";
+  }
+
+  .detail-body{
+    padding: 16px 2px 4px;
+    max-width:72ch;
+  }
+  .detail-body h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin: 20px 0 8px;
+  }
+  .detail-body h4:first-child{margin-top:0;}
+  .detail-body p{
+    margin: 0 0 12px;
+    color:var(--ink);
+  }
+  .detail-body ul{
+    margin:0 0 12px;
+    padding-left:20px;
+  }
+  .detail-body li{margin-bottom:6px;}
+
+  .plan-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+    margin: 8px 0 16px;
+  }
+  .plan-table th, .plan-table td{
+    text-align:left;
+    padding:8px 10px;
+    border-bottom:1px solid var(--paper-line);
+    vertical-align:top;
+  }
+  .plan-table th{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    width:34%;
+  }
+
+  blockquote{
+    margin: 14px 0;
+    padding: 4px 0 4px 16px;
+    border-left:3px solid var(--teal);
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:80px;
+    padding: 32px 0 64px;
+    border-top:1px solid var(--paper-line);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:600px){
+    header{padding:64px 0 40px;}
+    .record{padding:22px 18px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Portfolio · Data &amp; Applied AI</div>
+    <h1>Neha Riyazahamed Haveli</h1>
+    <p class="role">Data Analyst at a nonprofit, currently completing a master's in AI &amp; Data Analysis. This page collects three recent pieces of work — an interactive build, an applied AI lab, and a graduate reflection on leading change.</p>
+    <div class="header-links">
+      <a class="primary" href="https://ai-timeline-haveli-neha.netlify.app/" target="_blank" rel="noopener">View live demo ↗</a>
+      <a href="#lab">AI Lab</a>
+      <a href="#assessment">Leading Change</a>
+    </div>
+  </header>
+
+  <section class="block" id="timeline">
+    <p class="section-label">01 — Build</p>
+    <div class="record" data-record="record://timeline">
+      <div class="record-head">
+        <h3>AI History Timeline</h3>
+        <span class="status">Live</span>
+      </div>
+      <p class="desc">An interactive, scrollable timeline of AI's history, built as a standalone web app rather than a slide deck or written report — so the milestones can be explored in the order and depth a visitor chooses.</p>
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">Vite</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Netlify</span>
+      </div>
+      <div class="record-actions">
+        <a href="https://ai-timeline-haveli-neha.netlify.app/" target="_blank" rel="noopener">ai-timeline-haveli-neha.netlify.app ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="lab">
+    <p class="section-label">02 — Applied AI Lab</p>
+    <div class="record" data-record="record://ai-lab">
+      <div class="record-head">
+        <h3>AI Lab: Prompting, Design Thinking &amp; a Chatbot Build</h3>
+        <span class="status">AIML-500</span>
+      </div>
+      <p class="desc">A guided lab for the Machine Learning Fundamentals course: practicing prompt iteration across three tools, then applying the Design Thinking framework end-to-end to design and ship a working chatbot, "Social Spark."</p>
+      <div class="tags">
+        <span class="tag">Claude</span>
+        <span class="tag">Custom GPT</span>
+        <span class="tag">STORM AI</span>
+        <span class="tag">Chatbase</span>
+        <span class="tag">Design Thinking</span>
+      </div>
+      <div class="record-actions">
+        <a href="https://www.chatbase.co/iETMtP7xVQEcQojM1FRE1/help" target="_blank" rel="noopener">Try Social Spark ↗</a>
+      </div>
+
+      <details>
+        <summary>Read the full write-up</summary>
+        <div class="detail-body">
+
+          <h4>Part 1 — Practicing with generative AI</h4>
+          <p>The same prompt — marketing ideas for a Carrollton, TX cleaning service — was run three separate times through Claude to compare outputs, rather than treating the first answer as final. Each run surfaced a different lever: trust-building (background checks, guarantees, referrals), seasonal/local timing (allergy season, HOA flyers, back-to-school), and social proof (before/after photos, a "meet your cleaner" series).</p>
+          <p>The same thread was then pushed further with a custom GPT, using follow-up moves from the lab: asking it to revise for a tighter budget, adding the constraint of a solo-operator business, asking for sharper copy, asking it to justify its own prioritization, exploring a "what if we expand to a neighboring city" scenario, and finally asking for a summary — which held context well across every turn.</p>
+          <p>Finally, STORM AI was used as a research assistant on a related topic: how AI-assisted scheduling tools affect small service businesses. Rather than answering in one pass, it generated sub-questions and simulated perspectives first, then used those to guide research before assembling a structured, cited article — closer to how a person would outline before drafting.</p>
+
+          <h4>Part 2 — Problem-solving reflection</h4>
+          <p>The lab also asked for a reflection on how problems get approached in general. The starting point is understanding a problem fully before reacting — close to the idea of <em>tabayyun</em>, verifying before acting, since a solution built on a misread problem rarely holds up. Judging whether something actually worked means looking at real outcomes and honest feedback rather than how smooth the process felt, which ties to <em>muhasabah</em> — regularly re-checking your own work instead of assuming it's correct.</p>
+          <p>User-centric thinking follows the same logic: picturing the constraints — time, budget, stress — of the person facing the problem before designing anything, in the spirit of <em>ihsan</em>, doing the work with the same care as if the outcome mattered personally. Empathy is treated as the reason Design Thinking starts where it does — without it, it's easy to solve the wrong problem well.</p>
+
+          <h4>Part 3 — Designing "Social Spark"</h4>
+          <p>The build ran the full Design Thinking cycle for a chatbot aimed at small business owners who are time-poor, budget-constrained, and not social-media specialists — and don't have the time or budget to keep up with trends or hire outside help.</p>
+          <p><strong>Problem statement:</strong> small business owners need a fast, free way to get social post ideas that feel authentic to their audience and region, without researching trends themselves.</p>
+          <p><strong>Concept:</strong> given a business type, audience, and region, the bot returns a short list of post ideas — hook, caption, and format — without re-asking for the same details every conversation.</p>
+
+          <table class="plan-table">
+            <tr><th>Objective</th><td>Generate relatable, on-trend social post ideas tailored to a small business's audience and region.</td></tr>
+            <tr><th>Knowledge source</th><td>General social media best practice plus whatever the user shares about their business — no live trend-scraping.</td></tr>
+            <tr><th>Explicit boundaries</th><td>Never claims to guarantee revenue or results, write full ad campaigns, or give financial/legal advice.</td></tr>
+            <tr><th>Interaction style</th><td>One combined intake question, then 3–5 ideas — not three separate questions.</td></tr>
+            <tr><th>Test scenario</th><td>"A coffee shop in Austin, TX targeting young professionals" — checked that ideas were specific, not generic.</td></tr>
+          </table>
+
+          <p>The build tool was Chatbase's free tier, with a system prompt carrying explicit memory rules so the bot never re-asks for information it already has, plus a reference knowledge base (format guides, hook formulas, seasonal prompts) to sharpen specificity. Branding — logo, headline "Got 2 minutes? Let's find your next post," and quick-start buttons — was added for a clear first-time experience.</p>
+
+          <h4>Reflection</h4>
+          <p>The most useful single decision was setting explicit memory rules in the system prompt — without them, the bot would re-ask basic questions and undercut the entire "efficient for busy owners" premise the project was built around. Testing the same prompt multiple times in Part 1 and running an empathy-first framework in Parts 2–3 kept the bot's scope honest: focused on saving time rather than overpromising results it can't deliver.</p>
+
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="block" id="assessment">
+    <p class="section-label">03 — Graduate Reflection</p>
+    <div class="record" data-record="record://leading-change">
+      <div class="record-head">
+        <h3>Personal Assessment — Leading Change</h3>
+        <span class="status">AIML-500</span>
+      </div>
+      <p class="desc">A self-assessment comparing strengths and gaps across two instruments — AI/ML Integration Leadership and Change Management — written for the Machine Learning Fundamentals course's leading-change module.</p>
+      <div class="tags">
+        <span class="tag">Leadership</span>
+        <span class="tag">Change Management</span>
+        <span class="tag">Self-Assessment</span>
+      </div>
+
+      <details>
+        <summary>Read the full reflection</summary>
+        <div class="detail-body">
+
+          <h4>AI/ML integration leadership</h4>
+          <p>The top three strengths identified were technology awareness, strategic thinking, and collaboration — a grasp of how AI and ML can meet organizational objectives, an emphasis on purposeful rather than symbolic implementation, and communication skills that support cross-team rollout. The areas flagged for growth were a deeper grounding in AI/ML concepts themselves, the ethical and risk-management side of AI, and turning strategy into concrete implementation plans.</p>
+
+          <h4>Change management</h4>
+          <p>The strongest areas here were communication, stakeholder engagement, and adaptability — effective communication lowers uncertainty and helps people embrace change, stakeholder engagement builds the trust a change program depends on, and adaptability supports problem-solving when plans shift. The growth areas were measuring the impact of change, handling resistance, and building coaching skills to help others adapt.</p>
+
+          <h4>Evaluation and recommendations</h4>
+          <p>Both instruments were useful for self-reflection but are still self-report, so pairing them with peer and manager feedback would round out the picture. The AI/ML assessment would benefit from added questions on governance, data privacy, and measuring the business value of AI; the change management assessment from more on emotional intelligence, employee engagement, and formal change frameworks. Together, the two are treated as a starting point rather than a verdict — a way to point toward the leadership skills needed for AI/ML integration and organizational change, not a finished score.</p>
+
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <span>Neha Riyazahamed Haveli</span>
+    <span>Built for AIML-500, Indiana Wesleyan University</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
